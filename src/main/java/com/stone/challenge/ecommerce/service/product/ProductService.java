@@ -5,9 +5,8 @@ import com.stone.challenge.ecommerce.dto.product.RequestProduct;
 import com.stone.challenge.ecommerce.model.product.Product;
 import com.stone.challenge.ecommerce.repository.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.JpaSystemException;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,6 +18,7 @@ public class ProductService {
     @Autowired
     ProductRepository repository;
 
+    @Cacheable("products")
     public List<ProductDTO> findAllProducts() {
         try {
             List<ProductDTO> response = new ArrayList<ProductDTO>();
