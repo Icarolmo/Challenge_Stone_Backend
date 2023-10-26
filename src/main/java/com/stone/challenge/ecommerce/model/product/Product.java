@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@Entity(name = "Product")
+@Entity(name = "product")
 @Table(name = "star_products", schema = "starstone-ecommerce")
 @Getter
 @Setter
